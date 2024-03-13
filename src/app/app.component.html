@@ -1,0 +1,66 @@
+<div class="header">
+    <div class="title">
+        <h1>Food Recipe Finder 🔍</h1>
+    </div>
+    <div class="input">
+        <input type="text" [(ngModel)]="toSearchRecipe" placeholder="Search recipe here...">
+        <button (click)="fetchRecipes()">Search </button>
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#">Categories 📃</a></li>
+                <li><a href="#">Favorite 👍</a></li>
+                <li><a href="#">About Us ®</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- <div class="showRecipe">
+
+    @for (recipe of recipes; track recipes){
+        <ol>
+            <li>
+                <h3>Title: </h3>{{recipe.title}}
+                <h3>Ingredients Required: </h3>{{recipe.ingredients}}
+                <h3>Servings: </h3>{{recipe.servings}}
+                <h3>Instruction to be followed: </h3>{{recipe.instructions}}
+            </li>
+            <br>
+        </ol>
+    }
+</div> -->
+
+<!-- <div class="recipe-cards">
+    @for (recipe of recipes; track recipes) {
+        <div class="recipe-card">
+            <h3>{{recipe.title}}</h3>
+            <p><strong>Ingredients:</strong> {{recipe.ingredients}}</p>
+            <p><strong>Servings:</strong> {{recipe.servings}}</p>
+            <p><strong>Instructions:</strong> {{recipe.instructions}}</p>
+        </div>
+    }
+</div> -->
+
+<div class="displayCard">
+    @for (recipe of recipes; track recipes) {
+        <div class="recipe-card">
+            <img src="../assets/istockphoto-477840571-612x612.jpg" alt="">
+            <h2>Name of Recipe: 
+                <h2>{{recipe.title}}</h2>
+            </h2>
+            <h3>Servings: {{recipe.servings}} </h3>
+           <div class="chooseButton">
+            <button id="ingredients" (click)="fetchIngredients(recipe)">Ingredients</button>
+            <button id="instructions" (click)="fetchInstruction(recipe)">Instructions</button>
+           </div>
+        </div>
+    }
+</div>
+
+<div class="footer">
+    <footer>
+        <p>&copy; 2024 Food Recipe Finder. All rights reserved.</p>
+    </footer>
+</div>
